@@ -1,0 +1,180 @@
+/* ==========================
+   ESTILO GENERAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(180,120,255,.25), transparent 25%),
+        radial-gradient(circle at 80% 25%, rgba(70,120,255,.20), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255,100,220,.15), transparent 35%),
+        linear-gradient(180deg,#050510,#12092e,#21145d,#132b70);
+
+    background-attachment:fixed;
+}
+
+/* ==========================
+   ESTRELLAS
+========================== */
+
+:body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(173,109,255,.35), transparent 28%),
+        radial-gradient(circle at 75% 30%, rgba(63,94,251,.30), transparent 32%),
+        radial-gradient(circle at 50% 85%, rgba(255,90,200,.18), transparent 35%),
+        linear-gradient(180deg,#050510,#12092e,#21145d,#132b70);
+
+    background-size:150% 150%;
+    animation:fondo 18s ease-in-out infinite alternate;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:-50%;
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1.5px),
+        radial-gradient(circle, #c084fc 2px, transparent 2.5px),
+        radial-gradient(circle, #60a5fa 1.5px, transparent 2px);
+
+    background-size:
+        80px 80px,
+        180px 180px,
+        260px 260px;
+
+    opacity:.8;
+
+   animation:estrellas 80s linear infinite, brillo 3s ease-in-out infinite alternate;
+}
+
+@keyframes fondo{
+
+0%{
+background-position:0% 0%;
+}
+
+50%{
+background-position:100% 40%;
+}
+
+100%{
+background-position:0% 100%;
+}
+
+}
+@keyframes estrellas{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(-120px,-60px);
+}
+
+100%{
+transform:translate(-240px,-120px);
+}
+
+}
+.shooting-star{
+    position:fixed;
+    top:-10%;
+    left:-10%;
+    width:180px;
+    height:2px;
+
+    background:linear-gradient(to right,
+    white,
+    rgba(255,255,255,0));
+
+    transform:rotate(35deg);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:shooting 8s linear infinite;
+}
+@keyframes shooting{
+
+0%{
+transform:translate(-200px,-200px) rotate(35deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+40%{
+transform:translate(1200px,700px) rotate(35deg);
+opacity:0;
+}
+
+100%{
+opacity:0;
+}
+
+}
+/* ==========================
+   TARJETA MODERNA
+========================== */
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(88,70,255,.35);
+    transition:all .4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 60px rgba(120,90,255,.55);
+}
+
+.card-image{
+    height:220px;
+
+    background:
+    radial-gradient(circle at 30% 40%, rgba(180,120,255,.7), transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(70,130,255,.6), transparent 30%),
+    linear-gradient(135deg,#140b3f,#2b1978,#163e9b);
+
+    animation:cardGlow 8s ease-in-out infinite;
+}
+@keyframes cardGlow{
+
+0%{
+filter:brightness(1);
+}
+
+50%{
+filter:brightness(1.25);
+}
+
+100%{
+filter:brightness(1);
+}
+
+}
